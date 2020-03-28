@@ -4,9 +4,9 @@ public class Runner {
     public static  void main(String[] agrs) {
 
         Shop<Product> shop = new Shop<Product>();
-        Product product=new Product(11,"Хлебушек",12);
-        Product product2=new Product(10,"Кортошечка",10);
-        Product product3=new Product(10,"Котлетки",1344);
+        Product product=new Product(0,"Хлебушек",12);
+        Product product2=new Product(0,"Кортошечка",10);
+        Product product3=new Product(0,"Котлетки",1344);
         shop.addProduct(product);
         shop.addProduct(product2);
         shop.addProduct(product3);

@@ -9,13 +9,9 @@ public class Ex28 {
     public static <E> void isInput(E mas[]) {
         E a[] = mas;
         TypeForGeneric<E> test = new TypeForGeneric<E>();
-        Scanner in = new Scanner(System.in);
-
         test.setMas(a);
-
-
         for(int i = 0; i< test.getLength(); i++) {
-            System.out.print(test.getMas(i) + " ");
+            System.out.print(test.getElement(i) + " ");
         }
         System.out.println();
     }

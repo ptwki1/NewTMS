@@ -7,6 +7,7 @@ public class Ex32 {
     public static void main(String[] agrs){
         System.out.println("Введите текст");
         Scanner in = new Scanner(System.in);
+        Integer m=0;
         String string = in.nextLine();
         String[] words = string.split("\\s+");
         HashMap<String, Integer> wordToCount = new HashMap<>();
@@ -14,7 +15,7 @@ public class Ex32 {
         {
             if (!wordToCount.containsKey(word))
             {
-                wordToCount.put(word, 0);
+                wordToCount.put(word,m);
             }
             wordToCount.put(word, wordToCount.get(word) + 1);
         }
@@ -22,7 +23,5 @@ public class Ex32 {
         {
             System.out.println(word + " " + wordToCount.get(word));
         }
-
-
     }
 }

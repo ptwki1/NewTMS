@@ -1,20 +1,18 @@
 package lesson10.shop;
 
-public class Product extends Tovar  {
+public class Product   {
     private Integer id;
     private String name;
     private Integer price;
-
+    private static Integer idCount = 1;
     public Product(Integer id, String name, Integer price) {
-        this.id =initId(id);
+        this.id =idCount;
         this.name = name;
         this.price = price;
+        idCount++;
     }
 
-    public Integer initId(Integer id){
-       Integer random=(int)(Math.random()*id);
-        return random;
-    }
+
     public Product() {
     }
 
