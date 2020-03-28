@@ -7,7 +7,7 @@ public class Ex32 {
     public static void main(String[] agrs){
         System.out.println("Введите текст");
         Scanner in = new Scanner(System.in);
-        Integer m=0;
+        Integer m=1;
         String string = in.nextLine();
         String[] words = string.split("\\s+");
         HashMap<String, Integer> wordToCount = new HashMap<>();
