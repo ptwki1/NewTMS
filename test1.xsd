@@ -1,0 +1,93 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="PC">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute type="xs:string" name="id" use="optional"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="mause" type="xs:string"/>
+    <xs:element name="keyboard" type="xs:string"/>
+    <xs:element name="printer" type="xs:string"/>
+    <xs:element name="COM" type="xs:string"/>
+    <xs:element name="USB" type="xs:string"/>
+    <xs:element name="LPT" type="xs:string"/>
+    <xs:element name="IO">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="mause"/>
+                <xs:element ref="keyboard"/>
+                <xs:element ref="printer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ports">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="COM"/>
+                <xs:element ref="USB"/>
+                <xs:element ref="LPT"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="pereferia" type="xs:string"/>
+    <xs:element name="energyConsumption" type="xs:float"/>
+    <xs:element name="cooler" type="xs:string"/>
+    <xs:element name="componentGroup">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="IO"/>
+                <xs:element ref="ports"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="name" type="xs:string"/>
+    <xs:element name="origin" type="xs:string"/>
+    <xs:element name="Cost">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:float">
+                    <xs:attribute type="xs:string" name="currency"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="type">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="PC" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="devices">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="pereferia"/>
+                <xs:element ref="energyConsumption"/>
+                <xs:element ref="cooler"/>
+                <xs:element ref="componentGroup"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Computer">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="name"/>
+                <xs:element ref="origin"/>
+                <xs:element ref="Cost"/>
+                <xs:element ref="type"/>
+                <xs:element ref="devices"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="id"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Computers">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Computer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

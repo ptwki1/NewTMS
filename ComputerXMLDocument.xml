@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Computers>
+    <Computer id="id1" >
+        <name>Sony</name>
+        <origin>Japan</origin>
+        <Cost currency="EUR">1000.25</Cost>
+        <type>
+            <PC id="id1">Nettop</PC>
+            <PC id="id2">Laptops</PC>
+            <PC id="id3">Monoblocks</PC>
+        </type>
+        <devices>
+            <pereferia >Yes </pereferia>
+            <energyConsumption>50.0</energyConsumption>
+            <cooler>Yes</cooler>
+            <componentGroup>
+                <IO>
+                    <mause>Yes</mause>
+                    <keyboard >Yes</keyboard>
+                    <printer >Yes </printer>
+                </IO>
+                <ports>
+                    <COM>Yes</COM>
+                    <USB>Yes</USB>
+                    <LPT>No</LPT>
+                </ports>
+            </componentGroup>
+        </devices>
+    </Computer>
+</Computers>
