@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<library>
+    <name>Библиотека Братьев Стругацких</name>
+            <employees>
+                <employee name="Книга 1" genre="Фантастика" year="1967" cover="Твердая обложка"/>
+                <employee name="Книга 2" genre="Научная фантастика" year="2000" cover="Мягкая обложка"/>
+                <employee name="Книга 3" genre="Антиутопия" year="1988 " cover="Твердая обложка"/>
+                <employee name="Книга 4" genre="Антиутопия" year="1984 " cover="Твердая обложка"/>
+                <employee name="Книга 5" genre="Приключения" year="1987" cover="Твердая обложка"/>
+                <employee name="Книга 6" genre="Ужасы" year="1978" cover="Мягкая обложка"/>
+                <employee name="Книга 7" genre="Фантастика" year="2018" cover="Мягкая обложка"/>
+                <employee name="Книга 8" genre="Ужасы" year="2002" cover="Мягкая обложка"/>
+                <employee name="Книга 9" genre="Техническая литература " year="1888" cover="Мягкая обложка"/>
+                <employee name="Книга 10" genre="Антиутопия" year="1978" cover="Твердая обложка"/>
+            </employees>
+</library>
