@@ -3,7 +3,7 @@ package Lesson15.library;
 import java.util.concurrent.Semaphore;
 
 public class ReadHome implements Runnable {
-    private static Semaphore semaphore = new Semaphore(1);
+    private static Semaphore semaphore = new Semaphore(2);
     @Override
     public void run() {
                 try {

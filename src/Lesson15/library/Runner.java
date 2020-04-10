@@ -15,41 +15,42 @@ import java.util.Random;
 public class Runner { public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, InterruptedException {
     ArrayList<Book> books = DocumentPars.bookDocument();
             Random random = new Random();
-            ReadHome readHome=new ReadHome();
-            Thread readH=new Thread(readHome);
-            ReadingRoom readingRoom=new ReadingRoom();
-            Thread readR=new Thread(readingRoom);
             new Thread(() -> {
                 try {
+                    int count=3;
+                    while(count>0) {
                         System.out.println("Взять книгу");
                         int i = random.nextInt(books.size());
                         Book emp = (Book) books.toArray()[i];
                         System.out.println(String.format("Книга : имя - %s, жанр - %s,год - %s, обложка книги - %s.", emp.getName(), emp.getGenre(), emp.getYear(), emp.getCover()));
                         Thread.sleep(1000);
-                        if (i >5) {
+                        if (i > 5) {
+                            ReadingRoom readingRoom = new ReadingRoom();
+                            Thread readR = new Thread(readingRoom);
                             System.out.println("Эту книгу можно взять только в читальный зал");
                             readR.start();
-                            do
-                            {
+                            do {
 
-                                try{
-                                    readR.join(250);				//Подождать окончания мысли четверть секунды.
-                                }catch(InterruptedException e){
+                                try {
+                                    readR.join(250);                //Подождать окончания мысли четверть секунды.
+                                } catch (InterruptedException e) {
                                 }
                             }
-                            while(readR.isAlive());
+                            while (readR.isAlive());
                         } else {
+                            ReadHome readHome = new ReadHome();
+                            Thread readH = new Thread(readHome);
                             System.out.println("Вы можете взять не более 2 книг с собой ");
                             readH.start();
-                            do
-                            {
-
-                                try{
+                            do {
+                                try {
                                     readH.join(250);
-                                }catch(InterruptedException e){
+                                } catch (InterruptedException e) {
                                 }
-                            }while (readH.isAlive());
+                            } while (readH.isAlive());
                         }
+                        count--;
+                    }
                 }catch (InterruptedException e){
                     e.printStackTrace();
                 }
